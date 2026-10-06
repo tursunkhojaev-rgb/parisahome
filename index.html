@@ -1,1 +1,979 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>PARISA HOME — Hotel Textile</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f8f7f3;
+  color:#17231d;
+  line-height:1.6;
+}
+
+:root{
+  --green:#173b2b;
+  --green2:#24543d;
+  --gold:#b08a4a;
+  --cream:#f4f0e7;
+  --white:#fff;
+  --text:#17231d;
+  --muted:#77766f;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(248,247,243,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #e5e1d8;
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  height:76px;
+  padding:0 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  text-decoration:none;
+  color:var(--green);
+  font-size:23px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.logo span{
+  display:block;
+  color:var(--gold);
+  font-size:8px;
+  letter-spacing:3px;
+  margin-top:-3px;
+}
+
+nav{
+  display:flex;
+  gap:28px;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  font-size:14px;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+/* HERO */
+
+.hero{
+  min-height:620px;
+  background:
+    linear-gradient(90deg,rgba(18,45,33,.88),rgba(18,45,33,.35)),
+    url("https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+  display:flex;
+  align-items:center;
+}
+
+.hero-content{
+  max-width:1200px;
+  width:100%;
+  margin:auto;
+  padding:70px 24px;
+  color:white;
+}
+
+.hero small{
+  color:#d8bd87;
+  letter-spacing:4px;
+  font-size:11px;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  max-width:700px;
+  font-family:Georgia,serif;
+  font-size:64px;
+  line-height:1.08;
+  margin:18px 0;
+  font-weight:500;
+}
+
+.hero p{
+  max-width:560px;
+  color:#eee;
+  font-size:17px;
+  margin-bottom:30px;
+}
+
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  background:var(--gold);
+  color:white;
+  padding:14px 25px;
+  border-radius:2px;
+  font-size:13px;
+  letter-spacing:.5px;
+}
+
+.btn:hover{
+  background:#977536;
+}
+
+/* INTRO */
+
+.intro{
+  max-width:1000px;
+  margin:auto;
+  padding:90px 24px 50px;
+  text-align:center;
+}
+
+.eyebrow{
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:11px;
+  text-transform:uppercase;
+}
+
+.intro h2{
+  font-family:Georgia,serif;
+  font-size:42px;
+  font-weight:500;
+  margin:12px 0 18px;
+}
+
+.intro p{
+  color:var(--muted);
+  max-width:700px;
+  margin:auto;
+}
+
+/* CATEGORIES */
+
+.categories{
+  max-width:1200px;
+  margin:auto;
+  padding:30px 24px 90px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.section-title h2{
+  font-family:Georgia,serif;
+  font-size:38px;
+  font-weight:500;
+}
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.category{
+  min-height:210px;
+  background:var(--green);
+  color:white;
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+}
+
+.category:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent,rgba(0,0,0,.7));
+}
+
+.category-content{
+  position:relative;
+  z-index:2;
+}
+
+.category h3{
+  font-family:Georgia,serif;
+  font-size:24px;
+}
+
+.category p{
+  color:#ddd;
+  font-size:12px;
+  margin-top:5px;
+}
+
+/* PRODUCTS */
+
+.products{
+  background:#fff;
+  padding:90px 24px;
+}
+
+.products-inner{
+  max-width:1200px;
+  margin:auto;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.product{
+  background:#faf9f6;
+  border:1px solid #e7e3da;
+}
+
+.product-image{
+  height:300px;
+  overflow:hidden;
+  background:#eee;
+}
+
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.product:hover img{
+  transform:scale(1.04);
+}
+
+.product-info{
+  padding:22px;
+}
+
+.product-label{
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.product h3{
+  font-family:Georgia,serif;
+  font-size:24px;
+  margin:5px 0 8px;
+}
+
+.product p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.specs{
+  margin-top:17px;
+  border-top:1px solid #e5e1d8;
+  padding-top:15px;
+}
+
+.spec{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  padding:4px 0;
+}
+
+.spec strong{
+  color:var(--green);
+}
+
+.price{
+  font-size:20px;
+  color:var(--green);
+  font-weight:bold;
+  margin-top:14px;
+}
+
+/* FEATURE */
+
+.feature{
+  max-width:1200px;
+  margin:90px auto;
+  padding:0 24px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.feature-image{
+  height:500px;
+  background:
+    url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=85")
+    center/cover;
+}
+
+.feature h2{
+  font-family:Georgia,serif;
+  font-size:42px;
+  font-weight:500;
+  margin:12px 0 20px;
+}
+
+.feature p{
+  color:var(--muted);
+  margin-bottom:20px;
+}
+
+.check{
+  margin:10px 0;
+  color:var(--green);
+}
+
+.check:before{
+  content:"✓";
+  color:var(--gold);
+  margin-right:10px;
+}
+
+/* CTA */
+
+.cta{
+  background:var(--green);
+  color:white;
+  text-align:center;
+  padding:85px 24px;
+}
+
+.cta h2{
+  font-family:Georgia,serif;
+  font-size:42px;
+  font-weight:500;
+}
+
+.cta p{
+  color:#d9dedb;
+  max-width:600px;
+  margin:15px auto 28px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#10271d;
+  color:white;
+  padding:45px 24px;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+}
+
+footer h3{
+  font-family:Georgia,serif;
+  font-size:24px;
+}
+
+footer p{
+  color:#b9c3be;
+  font-size:13px;
+}
+
+.copyright{
+  margin-top:35px;
+  padding-top:20px;
+  border-top:1px solid #294337;
+  text-align:center;
+  color:#899891;
+  font-size:11px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  nav{
+    display:none;
+  }
+
+  .hero{
+    min-height:570px;
+  }
+
+  .hero h1{
+    font-size:43px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .intro h2,
+  .feature h2,
+  .cta h2{
+    font-size:32px;
+  }
+
+  .category-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+
+  .feature{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .feature-image{
+    height:380px;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+  }
+}
+
+@media(max-width:480px){
+
+  .nav{
+    height:65px;
+  }
+
+  .hero-content{
+    padding:50px 20px;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .category-grid{
+    grid-template-columns:1fr;
+  }
+
+  .category{
+    min-height:170px;
+  }
+
+  .products{
+    padding:65px 18px;
+  }
+
+  .intro{
+    padding:65px 20px 35px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <a href="#" class="logo">
+      PARISA HOME
+      <span>CREATING COMFORT</span>
+    </a>
+
+    <nav>
+      <a href="#products">Mahsulotlar</a>
+      <a href="#categories">Kategoriyalar</a>
+      <a href="#about">Biz haqimizda</a>
+      <a href="#contact">Aloqa</a>
+    </nav>
+
+  </div>
+</header>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <small>HOTEL TEXTILE COLLECTION</small>
+
+    <h1>
+      Mehmonxonalar uchun
+      premium tekstil.
+    </h1>
+
+    <p>
+      PARISA HOME — mehmonxonalar, sanatoriylar va
+      resortlar uchun sifatli sochiq va tekstil mahsulotlari.
+    </p>
+
+    <a href="#products" class="btn">
+      Katalogni ko‘rish
+    </a>
+
+  </div>
+
+</section>
+
+<section class="intro">
+
+  <span class="eyebrow">PARISA HOME</span>
+
+  <h2>
+    Komfort. Sifat. Ishonch.
+  </h2>
+
+  <p>
+    Mehmonlaringiz uchun qulaylikni, biznesingiz uchun
+    esa ishonchli sifatni taqdim etamiz.
+  </p>
+
+</section>
+
+<section class="categories" id="categories">
+
+  <div class="section-title">
+    <span class="eyebrow">KATEGORIYALAR</span>
+    <h2>Mahsulotlar</h2>
+  </div>
+
+  <div class="category-grid">
+
+    <a class="category" href="#towel">
+      <div class="category-content">
+        <h3>Sochiqlar</h3>
+        <p>Hotel kolleksiyasi</p>
+      </div>
+    </a>
+
+    <a class="category" href="#face">
+      <div class="category-content">
+        <h3>Yuz sochiq</h3>
+        <p>Alohida kategoriya</p>
+      </div>
+    </a>
+
+    <a class="category" href="#waffle">
+      <div class="category-content">
+        <h3>Vafli sochiq</h3>
+        <p>450 GSM · Oq</p>
+      </div>
+    </a>
+
+    <a class="category" href="#robe">
+      <div class="category-content">
+        <h3>Vafli xalat</h3>
+        <p>Hotel & Spa</p>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+
+<section class="products" id="products">
+
+<div class="products-inner">
+
+  <div class="section-title">
+    <span class="eyebrow">HOTEL COLLECTION</span>
+    <h2>Asosiy mahsulotlar</h2>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- HOTEL 450 -->
+
+    <article class="product" id="towel">
+
+      <div class="product-image">
+        <img
+          src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85"
+          alt="Parisa Home Hotel 450">
+      </div>
+
+      <div class="product-info">
+
+        <span class="product-label">HOTEL COLLECTION</span>
+
+        <h3>Hotel 450</h3>
+
+        <p>
+          Yumshoq, zich va mehmonxonalar uchun
+          mo‘ljallangan premium terri sochiq.
+        </p>
+
+        <div class="specs">
+
+          <div class="spec">
+            <span>GSM</span>
+            <strong>450 g/m²</strong>
+          </div>
+
+          <div class="spec">
+            <span>O‘lcham</span>
+            <strong>70×140 cm</strong>
+          </div>
+
+          <div class="spec">
+            <span>Yarn</span>
+            <strong>Ring</strong>
+          </div>
+
+          <div class="spec">
+            <span>Rang</span>
+            <strong>Oq</strong>
+          </div>
+
+        </div>
+
+        <div class="price">$4.75</div>
+
+      </div>
+
+    </article>
+
+
+    <!-- HOTEL 550 -->
+
+    <article class="product">
+
+      <div class="product-image">
+        <img
+          src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=85"
+          alt="Parisa Home Hotel 550">
+      </div>
+
+      <div class="product-info">
+
+        <span class="product-label">HOTEL COLLECTION</span>
+
+        <h3>Hotel 550</h3>
+
+        <p>
+          Yuqori zichlikdagi premium hotel sochiq.
+        </p>
+
+        <div class="specs">
+
+          <div class="spec">
+            <span>GSM</span>
+            <strong>550 g/m²</strong>
+          </div>
+
+          <div class="spec">
+            <span>O‘lcham</span>
+            <strong>70×140 cm</strong>
+          </div>
+
+          <div class="spec">
+            <span>Yarn</span>
+            <strong>Ring</strong>
+          </div>
+
+          <div class="spec">
+            <span>Rang</span>
+            <strong>Oq</strong>
+          </div>
+
+        </div>
+
+        <div class="price">$5.75</div>
+
+      </div>
+
+    </article>
+
+
+    <!-- HOTEL 650 -->
+
+    <article class="product">
+
+      <div class="product-image">
+        <img
+          src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85"
+          alt="Parisa Home Hotel 650">
+      </div>
+
+      <div class="product-info">
+
+        <span class="product-label">HOTEL COLLECTION</span>
+
+        <h3>Hotel 650</h3>
+
+        <p>
+          Maksimal yumshoqlik va zichlikka ega
+          premium hotel sochiq.
+        </p>
+
+        <div class="specs">
+
+          <div class="spec">
+            <span>GSM</span>
+            <strong>650 g/m²</strong>
+          </div>
+
+          <div class="spec">
+            <span>O‘lcham</span>
+            <strong>70×140 cm</strong>
+          </div>
+
+          <div class="spec">
+            <span>Yarn</span>
+            <strong>Ring</strong>
+          </div>
+
+          <div class="spec">
+            <span>Rang</span>
+            <strong>Oq</strong>
+          </div>
+
+        </div>
+
+        <div class="price">$6.85</div>
+
+      </div>
+
+    </article>
+
+
+    <!-- FACE TOWEL -->
+
+    <article class="product" id="face">
+
+      <div class="product-image">
+        <img
+          src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=85"
+          alt="Parisa Home yuz sochiq">
+      </div>
+
+      <div class="product-info">
+
+        <span class="product-label">FACE TOWEL</span>
+
+        <h3>Yuz sochiq</h3>
+
+        <p>
+          Mehmonxona va hospitality sohasi uchun
+          alohida yuz sochiq kategoriyasi.
+        </p>
+
+        <div class="specs">
+
+          <div class="spec">
+            <span>O‘lcham</span>
+            <strong>50×90 cm</strong>
+          </div>
+
+          <div class="spec">
+            <span>Rang</span>
+            <strong>Oq</strong>
+          </div>
+
+          <div class="spec">
+            <span>Model</span>
+            <strong>Hotel</strong>
+          </div>
+
+        </div>
+
+        <div class="price">$2.20 dan</div>
+
+      </div>
+
+    </article>
+
+
+    <!-- 40x80 -->
+
+    <article class="product">
+
+      <div class="product-image">
+        <img
+          src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85"
+          alt="Parisa Home 40x80 sochiq">
+      </div>
+
+      <div class="product-info">
+
+        <span class="product-label">HOTEL TOWEL</span>
+
+        <h3>40×80</h3>
+
+        <p>
+          Hotel uchun qulay o‘lchamdagi oq terri sochiq.
+        </p>
+
+        <div class="specs">
+
+          <div class="spec">
+            <span>O‘lcham</span>
+            <strong>40×80 cm</strong>
+          </div>
+
+          <div class="spec">
+            <span>Rang</span>
+            <strong>Oq</strong>
+          </div>
+
+        </div>
+
+        <div class="price">$1.34</div>
+
+      </div>
+
+    </article>
+
+
+    <!-- WAFFLE TOWEL -->
+
+    <article class="product" id="waffle">
+
+      <div class="product-image">
+        <img
+          src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=85"
+          alt="Parisa Home vafli sochiq">
+      </div>
+
+      <div class="product-info">
+
+        <span class="product-label">WAFFLE COLLECTION</span>
+
+        <h3>Vafli sochiq</h3>
+
+        <p>
+          Yengil va zamonaviy vafli teksturali
+          hotel sochiq.
+        </p>
+
+        <div class="specs">
+
+          <div class="spec">
+            <span>GSM</span>
+            <strong>450 g/m²</strong>
+          </div>
+
+          <div class="spec">
+            <span>Rang</span>
+            <strong>Oq</strong>
+          </div>
+
+          <div class="spec">
+            <span>Model</span>
+            <strong>Waffle</strong>
+          </div>
+
+        </div>
+
+        <div class="price">Hotel narxida</div>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<section class="feature" id="about">
+
+  <div class="feature-image"></div>
+
+  <div>
+
+    <span class="eyebrow">PARISA HOME</span>
+
+    <h2>
+      Hospitality uchun yaratilgan sifat.
+    </h2>
+
+    <p>
+      Biz mehmonxonalar, sanatoriylar, resortlar
+      va boshqa hospitality bizneslari uchun
+      professional tekstil mahsulotlarini taklif qilamiz.
+    </p>
+
+    <div class="check">Premium hotel sifati</div>
+    <div class="check">100% paxta kolleksiyalari</div>
+    <div class="check">Ulgurji buyurtmalar</div>
+    <div class="check">Mehmonxonalar uchun maxsus takliflar</div>
+
+  </div>
+
+</section>
+
+
+<section class="cta" id="contact">
+
+  <h2>Buyurtma berishga tayyormisiz?</h2>
+
+  <p>
+    Katalog, narxlar va ulgurji buyurtmalar bo‘yicha
+    biz bilan bog‘laning.
+  </p>
+
+  <a
+    class="btn"
+    href="https://wa.me/998000000000"
+    target="_blank">
+    WhatsApp orqali bog‘lanish
+  </a>
+
+</section>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+      <h3>PARISA HOME</h3>
+      <p>CREATING COMFORT</p>
+    </div>
+
+    <div>
+      <p>Hotel Textile</p>
+      <p>Sochiqlar · Xalatlar · Hotel mahsulotlari</p>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 PARISA HOME. All rights reserved.
+  </div>
+
+</footer>
+
+</body>
+</html>

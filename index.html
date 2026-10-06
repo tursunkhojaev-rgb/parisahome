@@ -3,283 +3,485 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PARISA HOME — Hotel Textile</title>
+
+<title>Parisa Home — Hotel Textile</title>
+
+<meta name="description"
+content="Parisa Home — mehmonxonalar, sanatoriylar va resortlar uchun premium tekstil mahsulotlari.">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f8f6f1;
-color:#172c22;
-line-height:1.6
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root{
+  --green:#102d23;
+  --green2:#173b2f;
+  --cream:#f5f2ea;
+  --gold:#c8a96b;
+  --dark:#102d23;
+  --gray:#777;
+  --white:#fff;
 }
-a{text-decoration:none;color:inherit}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--cream);
+  color:var(--dark);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* HEADER */
 
 header{
-height:76px;
-background:#0d2b20;
-color:white;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 6%;
-position:sticky;
-top:0;
-z-index:10
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(16,45,35,.97);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(200,169,107,.25);
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:18px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
 }
 
 .logo{
-font-family:Georgia,serif;
-font-size:25px;
-letter-spacing:3px;
-color:#d5b477
+  color:var(--gold);
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  letter-spacing:7px;
+  line-height:1;
 }
+
 .logo small{
-display:block;
-font-family:Arial;
-font-size:8px;
-letter-spacing:3px;
-color:#eee;
-margin-top:-5px
+  display:block;
+  color:white;
+  font-family:'DM Sans',sans-serif;
+  font-size:9px;
+  letter-spacing:5px;
+  margin-top:8px;
+  opacity:.85;
 }
 
-nav{display:flex;gap:30px;font-size:14px}
-nav a{color:white;opacity:.9}
-nav a:hover{color:#d5b477}
-
-.btn{
-background:#c9a566;
-color:#fff;
-padding:13px 22px;
-border-radius:30px;
-font-weight:bold;
-display:inline-block
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
+
+.catalog-btn,
+.whatsapp-btn{
+  background:var(--gold);
+  color:white;
+  padding:15px 25px;
+  border-radius:40px;
+  font-weight:700;
+  transition:.3s;
+}
+
+.catalog-btn:hover,
+.whatsapp-btn:hover{
+  transform:translateY(-2px);
+  opacity:.9;
+}
+
+/* HERO */
 
 .hero{
-min-height:600px;
-display:flex;
-align-items:center;
-padding:70px 6%;
-background:
-linear-gradient(90deg,rgba(247,242,233,.97) 0%,rgba(247,242,233,.82) 42%,rgba(247,242,233,.15) 100%),
-url("https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1800&q=85")
-center/cover
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  background:
+    linear-gradient(90deg,rgba(8,35,26,.9),rgba(8,35,26,.38)),
+    url("https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
 }
 
-.hero-content{max-width:600px}
+.hero-content{
+  max-width:1200px;
+  width:100%;
+  margin:auto;
+  padding:100px 28px;
+  color:white;
+}
+
 .eyebrow{
-color:#a88750;
-letter-spacing:4px;
-font-size:13px;
-margin-bottom:15px
+  color:var(--gold);
+  letter-spacing:6px;
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:22px;
 }
-h1{
-font-family:Georgia,serif;
-font-size:64px;
-line-height:1.05;
-font-weight:500;
-margin-bottom:25px
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(52px,8vw,105px);
+  line-height:.98;
+  max-width:900px;
+  margin-bottom:30px;
 }
+
 .hero p{
-font-size:18px;
-color:#59615c;
-max-width:520px;
-margin-bottom:30px
+  max-width:650px;
+  font-size:19px;
+  line-height:1.7;
+  color:rgba(255,255,255,.85);
+  margin-bottom:38px;
 }
 
-.buttons{display:flex;gap:15px;flex-wrap:wrap}
-.btn.dark{background:#0d2b20}
-.btn.light{
-background:transparent;
-border:1px solid #a88750;
-color:#806535
+.hero-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
 }
 
-.features{
-background:white;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-padding:35px 6%;
-gap:25px;
-border-bottom:1px solid #ddd
+.primary{
+  background:var(--gold);
+  color:white;
+  padding:17px 30px;
+  border-radius:40px;
+  font-weight:700;
 }
-.feature{
-text-align:center;
-padding:10px;
-border-right:1px solid #ddd
+
+.secondary{
+  border:1px solid rgba(255,255,255,.6);
+  color:white;
+  padding:17px 30px;
+  border-radius:40px;
+  font-weight:600;
 }
-.feature:last-child{border:0}
-.feature strong{display:block;font-size:17px;margin-bottom:5px}
-.feature span{font-size:13px;color:#777}
+
+/* INTRO */
+
+.intro{
+  padding:120px 25px;
+  text-align:center;
+  max-width:1000px;
+  margin:auto;
+}
+
+.intro .eyebrow{
+  color:var(--gold);
+}
+
+.intro h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(42px,6vw,75px);
+  line-height:1.05;
+  margin-bottom:30px;
+}
+
+.intro p{
+  color:var(--gray);
+  font-size:18px;
+  line-height:1.8;
+  max-width:700px;
+  margin:auto;
+}
+
+/* COLLECTION */
 
 .section{
-padding:80px 6%;
-max-width:1400px;
-margin:auto
+  max-width:1200px;
+  margin:auto;
+  padding:70px 25px 110px;
 }
 
-.section-title{text-align:center;margin-bottom:45px}
-.section-title h2{
-font-family:Georgia,serif;
-font-size:46px;
-font-weight:500
+.section-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+  margin-bottom:40px;
 }
 
-.categories{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px
+.section-heading h2{
+  font-family:'Playfair Display',serif;
+  font-size:55px;
 }
-.category{
-background:white;
-border-radius:3px;
-overflow:hidden;
-transition:.3s
+
+.section-heading p{
+  color:var(--gray);
+  max-width:400px;
+  line-height:1.6;
 }
-.category:hover{transform:translateY(-5px)}
-.category img{
-width:100%;
-height:230px;
-object-fit:cover
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
 }
-.category div{
-padding:18px;
-display:flex;
-justify-content:space-between;
-font-weight:bold
+
+.card{
+  background:white;
+  overflow:hidden;
+  border-radius:3px;
+  transition:.4s;
 }
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.card-img{
+  width:100%;
+  height:330px;
+  object-fit:cover;
+  display:block;
+}
+
+.card-info{
+  padding:25px 27px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.card-info h3{
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+}
+
+.arrow{
+  font-size:25px;
+}
+
+/* PRODUCT */
 
 .product{
-display:grid;
-grid-template-columns:1.1fr .9fr;
-background:white;
-margin-top:70px
+  background:white;
+  padding:100px 25px;
 }
-.product img{
-width:100%;
-height:520px;
-object-fit:cover
+
+.product-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
 }
-.product-info{
-padding:60px 55px;
-display:flex;
-flex-direction:column;
-justify-content:center
+
+.product-image{
+  width:100%;
+  height:600px;
+  object-fit:cover;
 }
-.product-info h2{
-font-family:Georgia,serif;
-font-size:48px;
-margin:8px 0 20px
+
+.product-label{
+  color:var(--gold);
+  letter-spacing:6px;
+  font-size:13px;
+  margin-bottom:18px;
 }
-.product-info p{
-color:#777;
-font-size:17px;
-margin-bottom:25px
+
+.product h2{
+  font-family:'Playfair Display',serif;
+  font-size:70px;
+  margin-bottom:20px;
 }
+
+.product-description{
+  color:var(--gray);
+  font-size:19px;
+  line-height:1.8;
+  margin-bottom:35px;
+}
+
 .specs{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-margin-bottom:30px
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-top:1px solid #ddd;
 }
+
 .spec{
-border-top:1px solid #ddd;
-padding-top:12px
-}
-.spec b{display:block;font-size:18px}
-.spec span{font-size:12px;color:#888}
-
-.price{
-font-size:30px;
-font-weight:bold;
-margin-bottom:20px
-}
-.price small{
-font-size:13px;
-color:#888;
-font-weight:normal
+  padding:20px 10px 20px 0;
+  border-bottom:1px solid #ddd;
 }
 
-.banner{
-min-height:420px;
-background:
-linear-gradient(90deg,rgba(8,35,25,.2),rgba(8,35,25,.92)),
-url("https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1800&q=85")
-center/cover;
-color:white;
-display:flex;
-align-items:center;
-padding:70px 10%
+.spec strong{
+  display:block;
+  font-size:24px;
+  margin-bottom:5px;
 }
-.banner-content{max-width:600px;margin-left:auto}
-.banner h2{
-font-family:Georgia,serif;
-font-size:50px;
-line-height:1.1;
-margin:10px 0 20px
-}
-.banner p{color:#ddd;font-size:17px}
 
-.contact{
-text-align:center;
-padding:80px 6%;
-background:#f0ede5
+.spec span{
+  color:#888;
+  font-size:14px;
 }
-.contact h2{
-font-family:Georgia,serif;
-font-size:42px;
-margin-bottom:15px
+
+/* CTA */
+
+.cta{
+  background:var(--green);
+  color:white;
+  text-align:center;
+  padding:110px 25px;
 }
-.contact p{color:#777;margin-bottom:25px}
+
+.cta h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(45px,6vw,75px);
+  margin-bottom:25px;
+}
+
+.cta p{
+  color:rgba(255,255,255,.7);
+  max-width:600px;
+  margin:0 auto 35px;
+  line-height:1.7;
+}
+
+/* FOOTER */
 
 footer{
-background:#0d2b20;
-color:white;
-padding:45px 6%;
-display:flex;
-justify-content:space-between;
-align-items:center
-}
-footer .logo{color:#d5b477}
-footer p{font-size:13px;color:#aaa}
-
-@media(max-width:800px){
-header{height:68px;padding:0 5%}
-nav{display:none}
-.logo{font-size:21px}
-.hero{
-min-height:620px;
-padding:50px 7%;
-background:
-linear-gradient(rgba(247,242,233,.82),rgba(247,242,233,.92)),
-url("https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1000&q=80")
-center/cover
-}
-h1{font-size:46px}
-.hero p{font-size:16px}
-.features{grid-template-columns:repeat(2,1fr);padding:25px 5%}
-.feature:nth-child(2){border:0}
-.categories{grid-template-columns:repeat(2,1fr)}
-.category img{height:170px}
-.section{padding:55px 5%}
-.section-title h2{font-size:38px}
-.product{grid-template-columns:1fr}
-.product img{height:350px}
-.product-info{padding:40px 25px}
-.product-info h2{font-size:40px}
-.banner{min-height:480px;padding:50px 7%}
-.banner-content{margin:0}
-.banner h2{font-size:40px}
-footer{flex-direction:column;gap:20px;text-align:center}
+  background:#0b211a;
+  color:white;
+  text-align:center;
+  padding:65px 25px;
 }
 
-@media(max-width:480px){
-.categories{grid-template-columns:1fr 1fr;gap:10px}
-.category img{height:140px}
-.category div{font-size:13px;padding:12px}
-h1{font-size:40px}
-.features{font-size:13px}
+.footer-logo{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+  font-size:34px;
+  letter-spacing:7px;
+}
+
+.footer-tag{
+  font-size:10px;
+  letter-spacing:5px;
+  margin-top:10px;
+  opacity:.8;
+}
+
+footer p{
+  margin-top:35px;
+  color:#999;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .nav{
+    padding:14px 16px;
+    gap:10px;
+  }
+
+  .logo{
+    font-size:21px;
+    letter-spacing:5px;
+  }
+
+  .logo small{
+    font-size:7px;
+    letter-spacing:3px;
+  }
+
+  .catalog-btn{
+    padding:13px 16px;
+    font-size:13px;
+  }
+
+  .hero{
+    min-height:650px;
+  }
+
+  .hero-content{
+    padding:80px 22px;
+  }
+
+  .hero h1{
+    font-size:52px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .intro{
+    padding:80px 22px;
+  }
+
+  .intro h2{
+    font-size:48px;
+  }
+
+  .section{
+    padding:55px 16px 75px;
+  }
+
+  .section-heading{
+    display:block;
+  }
+
+  .section-heading h2{
+    font-size:45px;
+    margin-bottom:15px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .card-img{
+    height:250px;
+  }
+
+  .product{
+    padding:70px 20px;
+  }
+
+  .product-inner{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .product-image{
+    height:430px;
+  }
+
+  .product h2{
+    font-size:55px;
+  }
+
+  .product-description{
+    font-size:17px;
+  }
+
+  .spec strong{
+    font-size:19px;
+  }
+
+  .cta{
+    padding:80px 22px;
+  }
+
+  footer{
+    padding:55px 20px;
+  }
 }
 </style>
 </head>
@@ -287,153 +489,325 @@ h1{font-size:40px}
 <body>
 
 <header>
-<div class="logo">
-PARISA HOME
-<small>CREATING COMFORT</small>
-</div>
+  <nav class="nav">
 
-<nav>
-<a href="#home">Asosiy</a>
-<a href="#products">Mahsulotlar</a>
-<a href="#about">Biz haqimizda</a>
-<a href="#contact">Aloqa</a>
-</nav>
+    <a href="#" class="logo">
+      PARISA HOME
+      <small>CREATING COMFORT</small>
+    </a>
 
-<a class="btn" href="#contact">Katalog yuklab olish ↓</a>
+    <div class="nav-right">
+      <a class="catalog-btn"
+         href="#catalog">
+        Katalog ↓
+      </a>
+    </div>
+
+  </nav>
 </header>
 
-<section class="hero" id="home">
-<div class="hero-content">
-<div class="eyebrow">HOTEL TEXTILE COLLECTION</div>
-<h1>Mehmonxonalar uchun premium tekstil mahsulotlari</h1>
-<p>
-Parisa Home — mehmonxonalar, sanatoriylar va kurortlar uchun yuqori sifatli tekstil mahsulotlari.
-Mehmonlaringiz qulayligi — bizning ustuvor maqsadimiz.
-</p>
 
-<div class="buttons">
-<a class="btn dark" href="#products">Mahsulotlar bilan tanishish →</a>
-<a class="btn light" href="#contact">Katalog yuklab olish ↓</a>
-</div>
-</div>
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      HOTEL TEXTILE • PREMIUM QUALITY
+    </div>
+
+    <h1>
+      Har bir mehmon uchun qulaylik.
+    </h1>
+
+    <p>
+      Mehmonxonalar, sanatoriylar va resortlar uchun
+      sifatli tekstil mahsulotlari. Parisa Home —
+      hospitality uchun ishonchli hamkor.
+    </p>
+
+    <div class="hero-actions">
+
+      <a class="primary"
+         href="https://wa.me/998901234567">
+        WhatsApp orqali bog‘lanish →
+      </a>
+
+      <a class="secondary"
+         href="#catalog">
+        Mahsulotlarni ko‘rish
+      </a>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section class="features">
-<div class="feature">
-<strong>✦ Premium sifat</strong>
-<span>Yuqori standartlarga mos mahsulotlar</span>
-</div>
-<div class="feature">
-<strong>♜ Mehmonxonalar uchun</strong>
-<span>Hotel, sanatoriy va kurortlar</span>
-</div>
-<div class="feature">
-<strong>✿ 100% paxta</strong>
-<span>Tabiiy va sifatli materiallar</span>
-</div>
-<div class="feature">
-<strong>▣ Tez yetkazib berish</strong>
-<span>O‘zbekiston va MDH bo‘ylab</span>
-</div>
+
+<!-- INTRO -->
+
+<section class="intro">
+
+  <div class="eyebrow">
+    PARISA HOME
+  </div>
+
+  <h2>
+    Mehmoningizning qulayligi
+    bizning ustuvor vazifamiz.
+  </h2>
+
+  <p>
+    Biz mehmonxonalar uchun sochiqlar, xalatlar,
+    yotoq to‘plamlari va boshqa hotel tekstil
+    mahsulotlarini taqdim etamiz.
+  </p>
+
 </section>
 
-<section class="section" id="products">
 
-<div class="section-title">
-<div class="eyebrow">MAHSULOT KATEGORIYALARI</div>
-<h2>Asosiy yo‘nalishlar</h2>
-</div>
+<!-- COLLECTION -->
 
-<div class="categories">
+<section class="section" id="catalog">
 
-<div class="category">
-<img src="https://images.unsplash.com/photo-1600369671236-e74521d4b0ad?auto=format&fit=crop&w=900&q=85">
-<div>Sochiqlar <span>→</span></div>
-</div>
+  <div class="section-heading">
 
-<div class="category">
-<img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=85">
-<div>Xalatlar <span>→</span></div>
-</div>
+    <div>
+      <div class="eyebrow">
+        OUR COLLECTION
+      </div>
 
-<div class="category">
-<img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=85">
-<div>Yotoq to‘plamlari <span>→</span></div>
-</div>
+      <h2>
+        Hotel Collection
+      </h2>
+    </div>
 
-<div class="category">
-<img src="https://images.unsplash.com/photo-1616627547584-bf28cee262db?auto=format&fit=crop&w=900&q=85">
-<div>Salfetkalar <span>→</span></div>
-</div>
+    <p>
+      Hospitality biznesingiz uchun tanlangan
+      premium tekstil mahsulotlari.
+    </p>
 
-</div>
+  </div>
 
-<div class="product">
 
-<img src="https://images.unsplash.com/photo-1600369671236-e74521d4b0ad?auto=format&fit=crop&w=1200&q=90">
+  <div class="cards">
 
-<div class="product-info">
-<div class="eyebrow">HOTEL COLLECTION</div>
-<h2>Hotel 450</h2>
+    <a href="#towels" class="card">
 
-<p>
-Yumshoq, zich va mehmonxonalar uchun mo‘ljallangan premium terri sochiq.
-</p>
+      <img
+        class="card-img"
+        src="https://images.unsplash.com/photo-1600369671236-e74521d2f8e3?auto=format&fit=crop&w=1200&q=85"
+        alt="Hotel sochiqlari">
 
-<div class="specs">
-<div class="spec">
-<b>450 gr/m²</b>
-<span>GSM</span>
-</div>
-<div class="spec">
-<b>70×140 cm</b>
-<span>O‘lcham</span>
-</div>
-<div class="spec">
-<b>Ring</b>
-<span>Yarn</span>
-</div>
-<div class="spec">
-<b>4 xil rang</b>
-<span>Mavjud</span>
-</div>
-</div>
+      <div class="card-info">
+        <h3>Sochiqlar</h3>
+        <span class="arrow">→</span>
+      </div>
 
-<div class="price">
-$4.75 <small>70×140 cm</small>
-</div>
+    </a>
 
-<a class="btn dark" href="#contact">Batafsil ma’lumot →</a>
-</div>
 
-</div>
+    <a href="#robes" class="card">
+
+      <img
+        class="card-img"
+        src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85"
+        alt="Hotel xalatlari">
+
+      <div class="card-info">
+        <h3>Xalatlar</h3>
+        <span class="arrow">→</span>
+      </div>
+
+    </a>
+
+
+    <a href="#beds" class="card">
+
+      <img
+        class="card-img"
+        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85"
+        alt="Hotel yotoq tekstili">
+
+      <div class="card-info">
+        <h3>Yotoq to‘plamlari</h3>
+        <span class="arrow">→</span>
+      </div>
+
+    </a>
+
+
+    <a href="#napkin" class="card">
+
+      <img
+        class="card-img"
+        src="https://images.unsplash.com/photo-1583845112203-454c1a8b3c5b?auto=format&fit=crop&w=1200&q=85"
+        alt="Hotel tekstil">
+
+      <div class="card-info">
+        <h3>Salfetkalar</h3>
+        <span class="arrow">→</span>
+      </div>
+
+    </a>
+
+  </div>
+
 </section>
 
-<section class="banner" id="about">
-<div class="banner-content">
-<div class="eyebrow">PARISA HOME</div>
-<h2>Har bir mehmon uchun qulaylik</h2>
-<p>
-Sifatli tekstil mahsulotlari bilan mehmonlaringizda unutilmas taassurot qoldiring.
-Parisa Home — hospitality uchun ishonchli hamkor.
-</p>
-</div>
+
+<!-- HOTEL 450 -->
+
+<section class="product" id="towels">
+
+  <div class="product-inner">
+
+    <img
+      class="product-image"
+      src="https://images.unsplash.com/photo-1600369671236-e74521d2f8e3?auto=format&fit=crop&w=1200&q=85"
+      alt="Parisa Home Hotel 450">
+
+    <div>
+
+      <div class="product-label">
+        HOTEL COLLECTION
+      </div>
+
+      <h2>
+        Hotel 450
+      </h2>
+
+      <p class="product-description">
+        Yumshoq, zich va mehmonxonalar uchun
+        mo‘ljallangan premium terri sochiq.
+      </p>
+
+      <div class="specs">
+
+        <div class="spec">
+          <strong>450 gr/m²</strong>
+          <span>GSM</span>
+        </div>
+
+        <div class="spec">
+          <strong>70×140 cm</strong>
+          <span>O‘lcham</span>
+        </div>
+
+        <div class="spec">
+          <strong>Ring</strong>
+          <span>Yarn</span>
+        </div>
+
+        <div class="spec">
+          <strong>4 xil rang</strong>
+          <span>Mavjud</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section class="contact" id="contact">
-<h2>Parisa Home bilan hamkorlik qiling</h2>
-<p>
-Mehmonxonangiz uchun tekstil mahsulotlarini tanlang va katalogimizni oling.
-</p>
-<a class="btn dark" href="https://wa.me/998900000000">WhatsApp orqali bog‘lanish →</a>
+
+<!-- MORE PRODUCTS -->
+
+<section class="section" id="robes">
+
+  <div class="section-heading">
+
+    <div>
+      <div class="eyebrow">
+        PARISA HOME
+      </div>
+
+      <h2>
+        Hospitality
+      </h2>
+    </div>
+
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <img
+        class="card-img"
+        src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85"
+        alt="Xalatlar">
+
+      <div class="card-info">
+        <h3>Xalatlar</h3>
+        <span class="arrow">→</span>
+      </div>
+
+    </div>
+
+
+    <div class="card" id="beds">
+
+      <img
+        class="card-img"
+        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85"
+        alt="Yotoq to‘plamlari">
+
+      <div class="card-info">
+        <h3>Yotoq to‘plamlari</h3>
+        <span class="arrow">→</span>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+  <h2>
+    Parisa Home bilan<br>
+    hamkorlik qiling.
+  </h2>
+
+  <p>
+    Mehmonxonangiz uchun sifatli tekstil
+    mahsulotlarini tanlang.
+  </p>
+
+  <a
+    class="whatsapp-btn"
+    href="https://wa.me/998901234567">
+    WhatsApp orqali bog‘lanish →
+  </a>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
-<div class="logo">
-PARISA HOME
-<small>CREATING COMFORT</small>
-</div>
-<p>© 2026 Parisa Home. All rights reserved.</p>
+
+  <div class="footer-logo">
+    PARISA HOME
+  </div>
+
+  <div class="footer-tag">
+    CREATING COMFORT
+  </div>
+
+  <p>
+    © 2026 Parisa Home. All rights reserved.
+  </p>
+
 </footer>
 
 </body>
